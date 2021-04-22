@@ -24,4 +24,6 @@ public class AcaoEntity {
     private BigInteger quantidadeTeorica;
 
     private BigDecimal percentualDeParticipacao;
+
+    private BigDecimal valorMedioDeMercado;
 }

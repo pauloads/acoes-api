@@ -26,6 +26,5 @@ public class AcaoItemProcessorTest {
         AcaoEntity acaoEntityActual = acaoItemProcessor.process(acaoEntity);
 
         assertEquals(ORDINARIA, acaoEntityActual.getTipo());
-
     }
 }

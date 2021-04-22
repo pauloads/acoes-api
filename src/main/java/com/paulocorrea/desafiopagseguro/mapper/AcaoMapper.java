@@ -6,6 +6,9 @@ import com.paulocorrea.desafiopagseguro.entities.AcaoEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Mapper
 public interface AcaoMapper {
 
@@ -14,4 +17,12 @@ public interface AcaoMapper {
     AcaoEntity toEntity(AcaoPostDTO acaoDTO);
 
     AcaoGetDTO toDTO(AcaoEntity acaoEntity);
+
+    default List<AcaoGetDTO> toDTOList(List<AcaoEntity> entityList) {
+        List<AcaoGetDTO> dtos = new ArrayList<>();
+        for (AcaoEntity entity : entityList) {
+            dtos.add(toDTO(entity));
+        }
+        return dtos;
+    }
 }
